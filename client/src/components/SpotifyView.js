@@ -8,6 +8,7 @@ class SpotifyView extends Component {
 		  	<p><strong>Artist:</strong> {this.props.artist}</p>
 		  	<p><strong>Song:</strong> {this.props.song}</p>
 		  	<p><strong>Album:</strong> {this.props.album}</p>
+		  	<p><strong>Album Art:</strong> {this.props.album}</p>
 		  	
 		  	<audio controls>
 		  		<source src={this.props.previewSong} type="audio/mpeg" />

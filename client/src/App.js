@@ -116,7 +116,7 @@ class App extends Component {
   render() {    
     return (
       <div className="App">
-        <h1>The React Songs App (Uncontrolled Component without refs)</h1>
+        <h1>Voting Music App</h1>
 
         <br /><br />
 
