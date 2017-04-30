@@ -1,0 +1,5 @@
+
+
+db.musicApp.insert({song: "LOVE", artist:"Kendrick Lamar", album:"DAMN", "albumArtLink" : "", "songLink:" : "", "geniusLink" : "", "votes" : 0, "createAt" : null})
+
+
