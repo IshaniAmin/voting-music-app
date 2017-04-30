@@ -2,12 +2,6 @@ import React, { Component } from 'react'
 import {__loadSong, __loadSpotifyInformation} from '../lib/songService'
 import SpotifyView from './SpotifyView'
 
-//this is how to get to match with a pure component style:
-	// const SongView = ({ match }) => (
-	//   <div>
-	//     <h3>ID: {match.params.id}</h3>
-	//   </div>
-	// )
 
 class SongView extends Component {
 	constructor() {
@@ -28,7 +22,8 @@ class SongView extends Component {
 	render() {
 		return (
 		  <div className="App">
-		  	<p><strong>Song ID:</strong> {this.props.match.params.id}</p>
+		  
+		  	{/* <p><strong>Song ID:</strong> {this.props.match.params.id}</p> */}
 
 		  	<br />
 		  	<br />

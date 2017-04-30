@@ -8,7 +8,7 @@ class Welcome extends Component {
       <div>
 
       	<center>
-	      	<h1 id="header">Welcome to _____</h1>
+	      	<h1 id="welcomeHeader">Welcome to _____</h1>
 	      	<button type="button" className="btn"><a href="/home">Enter</a></button>
         </center>
 
