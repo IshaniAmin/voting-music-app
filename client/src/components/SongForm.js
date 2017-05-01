@@ -4,18 +4,18 @@ const SongForm = (props) => (
   <form id="songForm" onSubmit={props.handleSubmit} data-songid={props.songId}>
     
 
+    <input type="text" 
+      name="currentArtistName"
+      defaultValue={props.artist}
+      placeholder="insert artist" 
+    />
 
     <input type="text" 
-    name="currentSong"
-    defaultValue={props.song}
-    placeholder="insert song name" 
-     />
+      name="currentSong"
+      defaultValue={props.song}
+      placeholder="insert song name" 
+    />
 
-     <input type="text" 
-    name="currentArtistName"
-    defaultValue={props.artist}
-    placeholder="insert artist" 
-     />
 
     {/* inline conditional rendering: */}
     <input type="submit" value={props.edit ? "Update" : "Save" } />
