@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import './SpotifyView.css';
 
+import RadioButtons from './RadioButtons.js';
+
 class SpotifyView extends Component {
 	render() {
 		return (
+
 		  <div className="SpotifyView">
+
+		  	<RadioButtons value={this.props.song} /> 
+
 		  	<p><strong>Artist:</strong> {this.props.artist}</p>
 		  	<p><strong>Song:</strong> {this.props.song}</p>
 		  	<p><strong>Album:</strong> {this.props.album}</p>
@@ -14,6 +20,8 @@ class SpotifyView extends Component {
 		  		<source src={this.props.previewSong} type="audio/mpeg" />
 		  		Your browser does not support the audio element.
 		  	</audio>
+
+
 		  </div>
 		);
 	}
