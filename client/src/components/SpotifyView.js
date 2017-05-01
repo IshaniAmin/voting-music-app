@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './SpotifyView.css';
 
-// import RadioButtons from './RadioButtons.js';
+import RadioButtons from './RadioButtons.js';
 
 class SpotifyView extends Component {
 	render() {
@@ -9,7 +9,7 @@ class SpotifyView extends Component {
 
 		  <div className="SpotifyView">
 
-		  	{/* <RadioButtons value={this.props.song} /> */} 
+		  	<RadioButtons value={this.props.song} /> 
 
 		  	<p><strong>Artist:</strong> {this.props.artist}</p>
 		  	<p><strong>Song:</strong> {this.props.song}</p>

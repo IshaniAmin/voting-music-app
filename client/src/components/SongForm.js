@@ -18,7 +18,7 @@ const SongForm = (props) => (
 
 
     {/* inline conditional rendering: */}
-    <input type="submit" value={props.edit ? "Update" : "Save" } />
+    <input type="submit" value="Get Songs to Pick" />
   </form>);
 
 
