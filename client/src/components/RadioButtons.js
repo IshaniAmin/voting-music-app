@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 
 
-class SpotifyView extends Component {
+class RadioButtons extends Component {
   render() {
     return (
 
       <div>
 
-        <input type="radio" name="songChoice" value={this.props.song} /> Pick this song!
+        <input type="submit" name="songChoice" value={this.props.song} /> Pick this song!
 
       </div>
     );
   }
 }
 
-export default SpotifyView;
+export default RadioButtons;

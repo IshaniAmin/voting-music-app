@@ -9,17 +9,21 @@ class SpotifyView extends Component {
 
 		  <div className="SpotifyView">
 
-		  	<RadioButtons value={this.props.song} /> 
+			<center>
 
-		  	<p><strong>Artist:</strong> {this.props.artist}</p>
-		  	<p><strong>Song:</strong> {this.props.song}</p>
-		  	<p><strong>Album:</strong> {this.props.album}</p>
-		  	<p><strong>Album Art:</strong> {this.props.album}</p>
-		  	
-		  	<audio controls>
-		  		<source src={this.props.previewSong} type="audio/mpeg" />
-		  		Your browser does not support the audio element.
-		  	</audio>
+			  	<RadioButtons value={this.props.song} /> 
+
+			  	<p><strong>Artist:</strong> {this.props.artist}</p>
+			  	<p><strong>Song:</strong> {this.props.song}</p>
+			  	<p><strong>Album:</strong> {this.props.album}</p>
+
+			  	
+			  	<audio controls>
+			  		<source src={this.props.previewSong} type="audio/mpeg" />
+			  		Your browser does not support the audio element.
+			  	</audio>
+
+			</center>
 
 
 		  </div>
