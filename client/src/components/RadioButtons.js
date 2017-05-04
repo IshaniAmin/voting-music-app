@@ -7,7 +7,7 @@ class RadioButtons extends Component {
 
       <div>
 
-        <input type="submit" name="songChoice" value={this.props.song} /> Pick this song!
+        <input type="submit" name="songChoice" value="Pick this song" />
 
       </div>
     );

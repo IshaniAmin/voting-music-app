@@ -124,7 +124,7 @@ class App extends Component {
         <center>
 
           {/* you need to pass songId because you don't have access to key as a prop in the Song component*/}
-          <div id="songCards" className="col-md-4">
+          <div id="songCards">
             {this.state.songs.map((song, ind) => <Song 
               key={song._id} 
               songId={song._id} 

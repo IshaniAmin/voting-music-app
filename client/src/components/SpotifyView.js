@@ -13,6 +13,8 @@ class SpotifyView extends Component {
 
 			  	<RadioButtons value={this.props.song} /> 
 
+			  	<br />
+
 			  	<p><strong>Artist:</strong> {this.props.artist}</p>
 			  	<p><strong>Song:</strong> {this.props.song}</p>
 			  	<p><strong>Album:</strong> {this.props.album}</p>
