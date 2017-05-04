@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Song.css';
 import SongForm from './SongForm';
 import {
   Link
@@ -42,29 +43,33 @@ class Song extends Component {
     let urlToSongView = `/songs/${this.props.songId}`;
 
     return (
-      <li className="song">
-        { /* this.props.key */ } {/* Warning: Cat: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. */}
-        
-        {displayEditForm}
+      <div>
 
-        <Link exact to={urlToSongView}>SPOTIFY ME</Link>
+        <div id="listSongs" className="col-md-4" className="song">
+          { /* this.props.key */ } {/* Warning: Cat: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. */}
+          
+          {displayEditForm}
 
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <span className='delete-item'><a href='#' data-songid={this.props.songId} onClick={this.props.handleRemove}>X</a></span>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-              
-        <strong>Artist:</strong> {this.props.artist} {/* better to use artist from props because state in this component doesn't reflect the artist from the database in mongo */}
-        &nbsp;&nbsp;
-        <strong>Song:</strong> {this.props.song} {/* better to use song from props because state in this component doesn't reflect the song from the database in mongo */}
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <span className='edit-item'><a href='#' data-songid={this.props.songId} onClick={this._handleEdit}>{this.state.edit ? "Cancel" : "Edit"}</a></span>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <span className='vote-item'><a href='#' data-songid={this.props.songId} data-direction="up" onClick={this.props.handleVote}>/\</a></span>
-        &nbsp;&nbsp;
-        {this.props.votes}
-        &nbsp;&nbsp;
-        <span className='vote-item'><a href='#' data-songid={this.props.songId} data-direction="down" onClick={this.props.handleVote}>\/</a></span>
-      </li>
+          <Link exact to={urlToSongView}>SPOTIFY ME</Link>
+
+          <br />
+          <span className='delete-item'><a href='#' data-songid={this.props.songId} onClick={this.props.handleRemove}>X</a></span>
+          
+          <br />
+                
+          <strong>Artist:</strong> {this.props.artist} {/* better to use artist from props because state in this component doesn't reflect the artist from the database in mongo */}
+          <br />
+          <strong>Song:</strong> {this.props.song} {/* better to use song from props because state in this component doesn't reflect the song from the database in mongo */}
+          <br />
+          &nbsp;&nbsp;
+          <span className='vote-item'><a href='#' data-songid={this.props.songId} data-direction="up" onClick={this.props.handleVote}>/\</a></span>
+          &nbsp;&nbsp;
+          {this.props.votes}
+          &nbsp;&nbsp;
+          <span className='vote-item'><a href='#' data-songid={this.props.songId} data-direction="down" onClick={this.props.handleVote}>\/</a></span>
+        </div>
+
+      </div>
     );
   }
 }

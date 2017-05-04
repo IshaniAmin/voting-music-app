@@ -54,7 +54,6 @@ class GraphPage extends Component {
 
       	<center>
 	      	<h1 id="header">Graph Page</h1>
-	      	<p><strong>VOTES</strong></p>
         </center>
 
         <ul>

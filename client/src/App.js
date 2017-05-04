@@ -120,27 +120,24 @@ class App extends Component {
 
         <br /><br />
 
-        <h2>Add a Song</h2>
-        {/* you can also pass nothing to edit and it would work fine */}
-        <SongForm 
-          handleSubmit={this._handleSubmit} 
-          edit={false}
-           />
-        <br /><br />
+        
+        <center>
 
-        {/* you need to pass songId because you don't have access to key as a prop in the Song component*/}
-        <ul>
-          {this.state.songs.map((song, ind) => <Song 
-            key={song._id} 
-            songId={song._id} 
-            artist={song.artist} 
-            song={song.song} 
-            votes={song.votes}
-            handleRemove={this._handleRemove} 
-            handleUpdate={this._handleUpdate}
-            handleVote={this._handleVote} 
-            />)}
-        </ul>
+          {/* you need to pass songId because you don't have access to key as a prop in the Song component*/}
+          <div id="songCards" className="col-md-4">
+            {this.state.songs.map((song, ind) => <Song 
+              key={song._id} 
+              songId={song._id} 
+              artist={song.artist} 
+              song={song.song} 
+              votes={song.votes}
+              handleRemove={this._handleRemove} 
+              handleUpdate={this._handleUpdate}
+              handleVote={this._handleVote} 
+              />)}
+          </div>
+
+        </center>
 
         <br /><br />
       </div>

@@ -31,4 +31,51 @@
       To create a production bundle, use `npm run build`.
     -->
   </body>
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script type="text/javascript">
+
+  console.log($("li.song").val())
+    
+    $(function () { 
+        var myChart = Highcharts.chart('theGraph', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Song Votes'
+            },
+            xAxis: {
+                categories: ['Song1', 'Song2', 'Song3']
+            },
+            yAxis: {
+                title: {
+                    text: 'Song Votes'
+                }
+            },
+            series: [{
+                name: '',
+                data: [7, 5, 3]
+            }]
+        });
+    });
+
+    var chart1; // globally available
+    $(function() {
+           chart1 = Highcharts.stockChart('theGraph', {
+             rangeSelector: {
+                selected: 1
+             },
+             series: [{
+                name: 'USD to EUR',
+                data: usdtoeur // predefined JavaScript array
+             }]
+          });
+       });
+
+
+  </script>
+
+
 </html>
