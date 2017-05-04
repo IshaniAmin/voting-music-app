@@ -70,6 +70,7 @@ class addSong extends Component {
 
 	    <div>
         {this.state.spotifyData.map((song, index) => <SpotifyView key={index} {...song} />)}
+        { console.log( this.state.spotifyData ) }
 	    </div>
 
        

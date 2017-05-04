@@ -47,11 +47,11 @@ class VotesForGraph extends Component {
         <li className="song">
           { /* this.props.key */ } {/* Warning: Cat: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. */}
           
-                
+          <strong>Artist: </strong>{this.props.artist}
           &nbsp;&nbsp;
-          <strong>Song:</strong> {this.props.song} {/* better to use song from props because state in this component doesn't reflect the song from the database in mongo */}
+          <strong value={this.props.song}>Song:</strong> {this.props.song} {/* better to use song from props because state in this component doesn't reflect the song from the database in mongo */}
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <strong>Votes: </strong>{this.props.votes}
+          <strong value={this.props.votes}>Votes: </strong>{this.props.votes}
           
         </li>
 

@@ -60,7 +60,9 @@ class GraphPage extends Component {
           {this.state.songs.map((song, ind) => <VotesForGraph 
 
             song={song.song} 
+            artist={song.artist}
             votes={song.votes}
+
 
             />)}
         </ul>

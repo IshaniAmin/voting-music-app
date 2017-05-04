@@ -132,7 +132,6 @@ class App extends Component {
               song={song.song} 
               votes={song.votes}
               handleRemove={this._handleRemove} 
-              handleUpdate={this._handleUpdate}
               handleVote={this._handleVote} 
               />)}
           </div>
