@@ -91,7 +91,7 @@ class Song extends Component {
           
           <div>
             <audio controls>
-              <source src={this.props.geniusLink} type="audio/mpeg" />
+              <source src={this.props.previewLink} type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </div>

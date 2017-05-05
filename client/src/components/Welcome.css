@@ -8,5 +8,9 @@ body {
 }
 
 #welcomeHeader {
-	color: Black;
+	color: white;
+	margin-top: 10%;
+	border: 2px white solid;
+	width: 250px;
+	padding: 20px;
 }

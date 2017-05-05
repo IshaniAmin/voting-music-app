@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './SpotifyView.css';
+import { __createSong } from '../lib/songService';
+
 
 import RadioButtons from './RadioButtons.js';
 
@@ -7,29 +9,45 @@ class SpotifyView extends Component {
 	constructor(props) {
 	  super(props);
 
+	  this.state = {
+	    songs : [],
+	  }
+
 	  this._handleSubmit = this._handleSubmit.bind(this);
 	}
+
+	// componentDidMount() {
+	//   __loadSongs()
+	//     .then(songs => this.setState({songs}))
+	// }
 
 	_handleSubmit = (evt) => {
 	  evt.preventDefault();
 
 	  debugger;
 
-	  console.log(this.props.song, this.props.artist, this.props.previewSong, this.props.album)
-	  // let newSong = {artist: evt.target.children[0].value, song: evt.target.children[1].value, votes: 0};
+	  console.log(this.props)
 
-	  // __createSong(newSong)
-	  //   .then((savedSong) => { //we do this because the savedSong will have an _id while newSong won't 
-	  //     let songsUpdated = [...this.state.songs, savedSong];
+	  let newSong = {
+	  	song: this.props.song, 
+	  	artist: this.props.artist,
+	  	album: this.props.album, 
+	  	previewLink: this.props.previewSong,  
+	  	votes: 0
+	  };
 
-	  //     const songs = songsUpdated.sort(function(a, b) {
-	  //       return b.votes - a.votes;
-	  //     });
+	  __createSong(newSong)
+	    .then((savedSong) => { //we do this because the savedSong will have an _id while newSong won't 
+	      let songsUpdated = [...this.state.songs, savedSong];
 
-	  //     this.setState({
-	  //       songs
-	  //     });
-	  //   })
+	      });
+
+	      // this.setState({
+	      //   songs
+	      // });
+
+	  // });
+
 	}
 
 	render() {
