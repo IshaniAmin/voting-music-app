@@ -4,6 +4,34 @@ import './SpotifyView.css';
 import RadioButtons from './RadioButtons.js';
 
 class SpotifyView extends Component {
+	constructor(props) {
+	  super(props);
+
+	  this._handleSubmit = this._handleSubmit.bind(this);
+	}
+
+	_handleSubmit = (evt) => {
+	  evt.preventDefault();
+
+	  debugger;
+
+	  console.log(this.props.song, this.props.artist, this.props.previewSong, this.props.album)
+	  // let newSong = {artist: evt.target.children[0].value, song: evt.target.children[1].value, votes: 0};
+
+	  // __createSong(newSong)
+	  //   .then((savedSong) => { //we do this because the savedSong will have an _id while newSong won't 
+	  //     let songsUpdated = [...this.state.songs, savedSong];
+
+	  //     const songs = songsUpdated.sort(function(a, b) {
+	  //       return b.votes - a.votes;
+	  //     });
+
+	  //     this.setState({
+	  //       songs
+	  //     });
+	  //   })
+	}
+
 	render() {
 		return (
 
@@ -11,7 +39,7 @@ class SpotifyView extends Component {
 
 			<center>
 
-			  	<RadioButtons value={this.props.song} /> 
+			  	<RadioButtons {...this.props} handleSubmit={this._handleSubmit} /> 
 
 			  	<br />
 

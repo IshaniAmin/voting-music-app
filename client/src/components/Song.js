@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Song.css';
 import SongForm from './SongForm';
 import SpotifyView from './SpotifyView'
-import {__loadSong, __loadSpotifyInformation} from '../lib/songService'
+import {__loadSong, __loadSpotifyInformation} from '../lib/songService';
+import AudioPlayer from './AudioPlayer';
 
 
 import {
@@ -14,16 +15,16 @@ class Song extends Component {
     super(props);
 
     this.state = {
-      edit : false,
-      currentsong : "",
-      currentArtistName : "",
+      // edit : false,
+      // currentsong : "",
+      // currentArtistName : "",
       spotifyData : []
     }
 
     //when you use arrow syntax for functions, es7 will autobind those functions to the component
       //so you don't need these lines here
     //--
-    this._handleEdit = this._handleEdit.bind(this);
+    // this._handleEdit = this._handleEdit.bind(this);
     //--
   }
 
@@ -35,25 +36,25 @@ class Song extends Component {
       })
   }
 
-  _handleEdit = (evt) => {
-    evt.preventDefault();
-    this.setState({edit : !this.state.edit});
-  }
+  // _handleEdit = (evt) => {
+  //   evt.preventDefault();
+  //   this.setState({edit : !this.state.edit});
+  // }
  
   render() {
-    let displayEditForm = null;
-     if (this.state.edit) {
-      displayEditForm = <SongForm 
-          song={this.state.currentsong || this.props.song}
-          artist={this.state.currentArtistName || this.props.artist}
-          handleSubmit={this.props.handleUpdate}
-          edit={true}
-          songId={this.props.songId}
-          cancelForm={this._handleEdit}
-           />
-    }
+    // let displayEditForm = null;
+    //  if (this.state.edit) {
+    //   displayEditForm = <SongForm 
+    //       song={this.state.currentsong || this.props.song}
+    //       artist={this.state.currentArtistName || this.props.artist}
+    //       handleSubmit={this.props.handleUpdate}
+    //       edit={true}
+    //       songId={this.props._id}
+    //       cancelForm={this._handleEdit}
+    //        />
+    // }
 
-    let urlToSongView = `/songs/${this.props.songId}`;
+    let urlToSongView = `/songs/${this.props._id}`;
 
     return (
       <div className="col-md-4">
@@ -62,7 +63,7 @@ class Song extends Component {
 
           { /* this.props.key */ } {/* Warning: Cat: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. */}
 
-          <span className='delete-item'><a href='#' data-songid={this.props.songId} onClick={this.props.handleRemove}>X</a></span>
+          <span className='delete-item'><a href='#' data-songid={this.props._id} onClick={this.props.handleRemove}>X</a></span>
 
           <Link exact to={urlToSongView}>SPOTIFY ME</Link>  
 
@@ -78,7 +79,7 @@ class Song extends Component {
           
           &nbsp;&nbsp;
           
-          <span className='vote-item'><a href='#' data-songid={this.props.songId} data-direction="up" onClick={this.props.handleVote}>/\</a></span>
+          <span className='vote-item'><a href='#' data-songid={this.props._id} data-direction="up" onClick={this.props.handleVote}>/\</a></span>
           
           &nbsp;&nbsp;&nbsp;&nbsp;
           
@@ -86,18 +87,15 @@ class Song extends Component {
           
           &nbsp;&nbsp;
           
-          <span className='vote-item'><a href='#' data-songid={this.props.songId} data-direction="down" onClick={this.props.handleVote}>\/</a></span>
+          <span className='vote-item'><a href='#' data-songid={this.props._id} data-direction="down" onClick={this.props.handleVote}>\/</a></span>
           
           <div>
-            {this.state.spotifyData.map((song, index) => <SpotifyView key={index} {...song} />)}
-
             <audio controls>
-              <source src={this.props.previewSong} type="audio/mpeg" />
+              <source src={this.props.geniusLink} type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
-            
           </div>
-
+            
         </div>
 
       </div>

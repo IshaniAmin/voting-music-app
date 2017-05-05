@@ -127,12 +127,10 @@ class App extends Component {
           <div id="songCards">
             {this.state.songs.map((song, ind) => <Song 
               key={song._id} 
-              songId={song._id} 
-              artist={song.artist} 
-              song={song.song} 
-              votes={song.votes}
+              {...song}
               handleRemove={this._handleRemove} 
               handleVote={this._handleVote} 
+
               />)}
           </div>
 
