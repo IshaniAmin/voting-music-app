@@ -8,7 +8,7 @@ class Graph extends Component {
       <div>
 
       	<center>
-      		<h1>GRAPH GOES HERE!</h1>
+      		
 	      	<div id="theGraph"> </div>
         </center>
 
